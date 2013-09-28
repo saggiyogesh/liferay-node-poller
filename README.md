@@ -8,7 +8,7 @@ This implementation uses node/sockjs to use HTML5 websockets for supported brows
 Liferay node poller consists a hook available in plugins sdk and a nodejs/sockjs server named as NodePoller.
 
 ## Installation & Configuration:
-* Install node.js 
+* Install [node.js](http://nodejs.org/download/) 
 * Clone the repo:
 
     ```
