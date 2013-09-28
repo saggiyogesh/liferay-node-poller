@@ -15,6 +15,7 @@ Liferay node poller consists a hook available in plugins sdk and a nodejs/sockjs
     git clone git@github.com:saggiyogesh/liferay-node-poller.git
     ```
     
+    or [download](https://github.com/saggiyogesh/liferay-node-poller/releases/tag/1.0) the source.
 ### NodePoller Configuration:
 * In NodePoller folder install the dependencies:
 
