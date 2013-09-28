@@ -1,16 +1,17 @@
 
 package com.poller.action;
 
-import com.liferay.portal.kernel.events.SimpleAction;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.liferay.portal.kernel.events.ActionException;
+import com.liferay.portal.kernel.events.SimpleAction;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.poller.PollerProcessor;
-import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.Portlet;
 import com.liferay.portal.service.PortletLocalServiceUtil;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class PortletPollerInstance extends SimpleAction {
 
@@ -33,12 +34,8 @@ public class PortletPollerInstance extends SimpleAction {
 		for (Portlet portlet : PortletLocalServiceUtil.getPortlets()) {
 			String pollerProcessorClass = portlet.getPollerProcessorClass();
 			if (Validator.isNotNull(pollerProcessorClass)) {
-				System.out.println(portlet.getPortletId());
-//				if (!pollerProcessorClass.contains("ChatPollerProcessor") && !pollerProcessorClass.contains("AdminPollerProcessor")) {
-					System.out.println(pollerProcessorClass);
-					System.out.println(portlet.getPollerProcessorInstance());
-					_pollerProcessorInstances.put(portlet.getPortletId(), portlet.getPollerProcessorInstance());
-//				}
+				_log.info("Poller detected: " + portlet.getPortletId() + " :: " + portlet.getPollerProcessorInstance());
+				_pollerProcessorInstances.put(portlet.getPortletId(), portlet.getPollerProcessorInstance());
 			}
 		}
 
@@ -50,5 +47,7 @@ public class PortletPollerInstance extends SimpleAction {
 
 		return _pollerProcessorInstances.get(portletId);
 	}
+	
+	private static Log _log = LogFactoryUtil.getLog(PortletPollerInstance.class);
 
 }

@@ -73,7 +73,7 @@ public class PollerProcessorUtil {
 
 	protected static void startPolling(String portletId) throws Exception {
 		Collection<JSONObject> collection = UsersPortletMapper.get(portletId);
-		_log.info("mapper: " + collection.size());
+//		_log.info("mapper: " + collection.size());
 		for(JSONObject json: collection){
 			recieve(createPollerHeader(json), portletId);
 			json.put("initialRequest", false);
@@ -142,7 +142,7 @@ public class PollerProcessorUtil {
 	private static void recieve(PollerHeader pollerHeader, String portletId)
 		throws Exception {
 
-		_log.info(pollerHeader.toString());
+//		_log.info(pollerHeader.toString());
 		PollerProcessor processor = PortletPollerInstance.getPollerProcessorInstance(portletId);
 		String chunkId = null;
 		Map<String, String> parameterMap = new HashMap<String, String>();
