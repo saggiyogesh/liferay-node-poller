@@ -1,6 +1,10 @@
 Liferay node poller
 ===================
 
+Current Liferay poller implementation is AJAX based, it recusively fires send and receive ajax request. 
+
+This implementation uses node/sockjs to use HTML5 websockets for supported browsers and long polling for other browsers.
+
 Liferay node poller consists a hook available in plugins sdk and a nodejs/sockjs server named as NodePoller.
 
 ## Installation & Configuration:
