@@ -21,7 +21,7 @@ Liferay node poller consists a hook available in plugins sdk and a nodejs/sockjs
     ```
 
 * Edit the Liferay server url in `poller.properties`  
-* Run the server, listening on port 9999.
+* Run nodejs server, listening on port 9999.
 
     ```
     node server 
@@ -33,3 +33,7 @@ Liferay node poller consists a hook available in plugins sdk and a nodejs/sockjs
 * Deploy 'liferay-node-poller-hook-6.1.1.1.war' available in dist folder of plugins sdk.
 
 Note: Hook should be deployed at last.
+
+Now Liferay is configured with Node poller. 
+
+To remove this, simply undeploy liferay-node-poller-hook from Update Manager in Liferay.
