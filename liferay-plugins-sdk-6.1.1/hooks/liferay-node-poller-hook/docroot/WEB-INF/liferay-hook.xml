@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.1.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_1_0.dtd">
+
+<hook>
+	<portal-properties>portal.properties</portal-properties>
+	<custom-jsp-dir>/custom_jsps</custom-jsp-dir>
+	<servlet-filter>
+		<servlet-filter-name>Sample Filter</servlet-filter-name>
+		<servlet-filter-impl>com.poller.filter.PollerServletFilter</servlet-filter-impl>
+	</servlet-filter>
+	<servlet-filter-mapping>
+		<servlet-filter-name>Sample Filter</servlet-filter-name>
+		<before-filter>SSO Open SSO Filter</before-filter>
+		<url-pattern>/poller/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</servlet-filter-mapping>
+
+</hook>
