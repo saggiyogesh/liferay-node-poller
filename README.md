@@ -42,3 +42,7 @@ Note: Hook should be deployed at last.
 Now Liferay is configured with Node poller. 
 
 To remove this, simply undeploy liferay-node-poller-hook from Update Manager in Liferay.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/saggiyogesh/liferay-node-poller/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
